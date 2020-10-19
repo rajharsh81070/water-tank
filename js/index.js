@@ -115,7 +115,7 @@ const trapWater = () => {
     output += x;
   }
   height.push(0);
-  console.log(maxHeightLeft, maxHeightRight, input_array);
+  // console.log(maxHeightLeft, maxHeightRight, height);
   return [height, output];
 }
 
@@ -139,11 +139,11 @@ function generateTrapWater() {
   const text = document.createTextNode(`Output: ${output}`);
   h3.appendChild(text);
   document.getElementById('output').appendChild(h3);
-  for (let i = 2; i < datasetSize - 1; i++) {
-    let addHeight = height[i - 1];
-    for (let j = input_array[i - 1] + 1; j <= input_array[i - 1] + addHeight; j++) {
+  for (let i = 1; i < datasetSize - 1; i++) {
+    let addHeight = height[i];
+    for (let j = input_array[i] + 1; j <= input_array[i] + addHeight; j++) {
       // console.log(`col-${i}-height-${j}`);
-      let ele = document.getElementById(`col-${i}-height-${j}`);
+      let ele = document.getElementById(`col-${i + 1}-height-${j}`);
       ele.style.background = 'blue';
     }
   }
@@ -168,5 +168,6 @@ function resetBtn() {
     child = lineContainerElement.lastElementChild;
   }
 
-  document.getElementById('output').outerHTML = "";
+  let output = document.getElementById('output');
+  output.removeChild(output.lastElementChild);
 }
