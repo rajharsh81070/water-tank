@@ -159,6 +159,7 @@ function resetBtn() {
   document.getElementById('input-array').disabled = false;
   document.getElementById('dataset-size').value = '';
   document.getElementById('input-array').value = '';
+  datasetSize = 0, input_array = [];
   let lineContainerElement = document.getElementById('lines-container');
 
   // Remove Present Children
@@ -169,5 +170,7 @@ function resetBtn() {
   }
 
   let output = document.getElementById('output');
-  output.removeChild(output.lastElementChild);
+  if (output.lastElementChild) {
+    output.removeChild(output.lastElementChild);
+  }
 }
