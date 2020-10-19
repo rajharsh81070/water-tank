@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Tank Problem</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <h1>Water Tank Problem</h1>
+  <div class="controls">
+    <input type="number" id="dataset-size" class="ipt" placeholder="Array size (min 3)"
+      onblur="handleDatasetSizeChange()" />
+    <input type="text" id="input-array" class="ipt" placeholder="Enter elements with space"
+      onblur="handleInputArrayChange()" />
+    <button id="generate-array" class="btn" onclick="generateArray()">Generate Array</button>
+    <button id="linear-search" class="btn" onclick="doLinearSearch()">Trap Water</button>
+  </div>
+
+  <div id="lines-container">
+
+  </div>
+
+  <div id="toast">
+    <div id="toast-img"><i id="toast-icon" class="fa fa-2x fa-check-circle" aria-hidden="true"
+        style="color: #d0f0c0;"></i></div>
+    <div id="toast-desc"></div>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
