@@ -1,3 +1,4 @@
+// https://codepen.io/kipp0/pen/pPNrrj
 function toast(type, desc) {
   let toast = document.getElementById("toast")
   let toastDesc = document.getElementById("toast-desc")
@@ -11,18 +12,20 @@ function toast(type, desc) {
   setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 5000);
 }
 
+// Used for getting min element in array
 Array.prototype.min = function () {
   return Math.min.apply(null, this);
 };
 
+// Used for getting max element in array
 Array.prototype.max = function () {
   return Math.max.apply(null, this);
 };
 
+// inputs
 let datasetSize, input_array = [];
 
 function handleDatasetSizeChange() {
-
   datasetSize = Number(document.getElementById('dataset-size').value)
   if (!datasetSize || datasetSize < 3) {
     toast('fail', 'Dataset size must be minimum 3')
@@ -97,6 +100,7 @@ function generateArray() {
   document.getElementById('generate-array').disabled = true;
 }
 
+// Algo for trapping water
 const trapWater = () => {
   let height = [];
   let maxHeightLeft = [...input_array];
@@ -119,6 +123,7 @@ const trapWater = () => {
   return [height, output];
 }
 
+// Output Function
 function generateTrapWater() {
   if (!datasetSize || datasetSize < 3 || input_array.length < 3) {
     toast('fail', 'Input dataset size must be minimum 3')
